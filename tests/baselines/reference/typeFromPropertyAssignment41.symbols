@@ -1,0 +1,14 @@
+//// [tests/cases/conformance/salsa/typeFromPropertyAssignment41.ts] ////
+
+=== typeFromPropertyAssignment41.js ===
+const x = {}
+>x : Symbol(x, Decl(typeFromPropertyAssignment41.js, 0, 5), Decl(typeFromPropertyAssignment41.js, 0, 12))
+
+x.foo = 1
+>x.foo : Symbol(x.foo, Decl(typeFromPropertyAssignment41.js, 0, 12))
+>x : Symbol(x, Decl(typeFromPropertyAssignment41.js, 0, 5), Decl(typeFromPropertyAssignment41.js, 0, 12))
+>foo : Symbol(x.foo, Decl(typeFromPropertyAssignment41.js, 0, 12))
+
+const x = 1
+>x : Symbol(x, Decl(typeFromPropertyAssignment41.js, 2, 5))
+

@@ -804,8 +804,9 @@ function createBinder(): (file: SourceFile, options: CompilerOptions) => void {
                     // prototype symbols like methods.
                     symbolTable.set(name, symbol = createSymbol(SymbolFlags.None, name));
                 }
-                else if (!(includes & SymbolFlags.Variable && symbol.flags & SymbolFlags.Assignment)) {
+                else if (!(includes & SymbolFlags.Variable && symbol.flags & SymbolFlags.Assignment && !(symbol.flags & SymbolFlags.Variable))) {
                     // Assignment declarations are allowed to merge with variables, no matter what other flags they have.
+                    // However, if the existing symbol is already a Variable, the Assignment flag should not suppress the duplicate declaration error.
                     if (isNamedDeclaration(node)) {
                         setParent(node.name, node);
                     }

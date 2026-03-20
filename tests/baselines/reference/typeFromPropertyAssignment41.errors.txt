@@ -1,0 +1,16 @@
+typeFromPropertyAssignment41.js(1,7): error TS2451: Cannot redeclare block-scoped variable 'x'.
+typeFromPropertyAssignment41.js(2,1): error TS2451: Cannot redeclare block-scoped variable 'x'.
+typeFromPropertyAssignment41.js(3,7): error TS2451: Cannot redeclare block-scoped variable 'x'.
+
+
+==== typeFromPropertyAssignment41.js (3 errors) ====
+    const x = {}
+          ~
+!!! error TS2451: Cannot redeclare block-scoped variable 'x'.
+    x.foo = 1
+    ~
+!!! error TS2451: Cannot redeclare block-scoped variable 'x'.
+    const x = 1
+          ~
+!!! error TS2451: Cannot redeclare block-scoped variable 'x'.
+    

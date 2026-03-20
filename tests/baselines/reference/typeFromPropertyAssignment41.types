@@ -1,0 +1,27 @@
+//// [tests/cases/conformance/salsa/typeFromPropertyAssignment41.ts] ////
+
+=== typeFromPropertyAssignment41.js ===
+const x = {}
+>x : typeof x
+>  : ^^^^^^^^
+>{} : {}
+>   : ^^
+
+x.foo = 1
+>x.foo = 1 : 1
+>          : ^
+>x.foo : number
+>      : ^^^^^^
+>x : typeof x
+>  : ^^^^^^^^
+>foo : number
+>    : ^^^^^^
+>1 : 1
+>  : ^
+
+const x = 1
+>x : 1
+>  : ^
+>1 : 1
+>  : ^
+

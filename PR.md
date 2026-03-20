@@ -1,6 +1,10 @@
 ## Title
 fix(binder): report duplicate declaration error for block-scoped variables with expando assignments in JS files
 
+## Issue
+
+https://www.typescriptlang.org/play/?filetype=js#code/MYewdgzgLgBAHjAvDA3gXwFBwHQDMQhIwCMATAMwaiSwLLFA
+
 ## Summary
 
 - In JavaScript files, a duplicate `const` declaration was silently accepted when an expando property assignment appeared between the two declarations (e.g., `const x = {}; x.foo = 1; const x = 1` produced no errors)
